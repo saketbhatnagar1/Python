@@ -60,3 +60,72 @@ class student:
 
 s1 = student("SAKET BHATNAGAR",[60,70,80,90])
 s1.get_avg()
+
+class student:
+
+    @staticmethod #known as a decorator,that converts a normal function to a static method::
+    def hello():
+        print("Hello This is a static method")
+
+    def __init__(self,name,marks):#assume marks is a list
+        self.name = name
+        self.marks = marks
+    def get_avg(self):
+        sum = 0
+        length = len(self.marks)
+        for value in self.marks:
+            sum+=value
+        print("HELLO ",self.name,"You'r average score is :",sum/length)
+
+s1 = student("SAKET BHATNAGAR",[60,70,80,90])
+s1.get_avg()
+s1.hello()
+
+#static methods::Methods that dont use the self parametre:
+
+
+#Abstraction :Hiding implementation details of a class:
+             #:Achieved through:
+class Car:
+    def __init__(self):
+        self.acc = False
+        self.brk = True
+        self.clutch = False
+
+    def start(self):
+        self.clutch = True
+        self.brk = False
+        self.acc=True
+        print("Car started")
+car1 = Car()
+car1.start()
+
+
+#Encapsulation:
+
+#Wrapping of data members and functions into a single unit:that is our object
+class BankAccount():
+    def __init__(self,accountNo,balance = 0):
+        self.balance = balance
+        self.accountNo = accountNo
+
+    def setAccount(self,acn):
+        self.accountNo = acn
+    def credit(self,amount):
+        
+        
+
+        balance+=amount
+
+        
+
+    def debit(self,amount):
+        input_account = int(input("Enter Your Account Number: "))
+        self.accountNo = input_account
+        self.balance = self.balance-amount
+        print(f"the balance remaining for  {self.accountNo} is {self.balance}")
+        print("BALANCE :",self.balance)
+
+b1 = BankAccount(20,100)
+b1.debit(30)
+
